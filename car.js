@@ -138,5 +138,6 @@ function initializeGame() {
         gameArea.appendChild(enemyCar);
     }
 
+    // timer to increase speed by 1 unit after every 5 seconds
     speedInterval = setInterval(increaseSpeed, 5000);
 }
