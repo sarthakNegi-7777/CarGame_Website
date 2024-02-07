@@ -114,6 +114,7 @@ function initializeGame() {
 
     window.requestAnimationFrame(runGame);
 
+    // loop for road lines
     for (x = 0; x < 5; x++) {
         let roadLine = document.createElement("div");
         roadLine.setAttribute("class", "lines");
@@ -128,6 +129,7 @@ function initializeGame() {
     player.x = car.offsetLeft;
     player.y = car.offsetTop;
 
+    // loop for road cars
     for (x = 0; x < 3; x++) {
         let enemyCar = document.createElement("div");
         enemyCar.setAttribute("class", "enemyCar");
