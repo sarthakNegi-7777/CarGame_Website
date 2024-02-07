@@ -51,7 +51,6 @@ function moveLines() {
 
 function endGame() {
     clearInterval(speedInterval);
-
     player.start = false;
     startScreen.classList.remove("hide");
     startScreen.innerHTML =
@@ -66,12 +65,10 @@ function moveEnemy(myCar) {
         if (isCollide(myCar, enemyCar)) {
             endGame();
         }
-
         if (enemyCar.y >= 750) {
             enemyCar.y = -300;
             enemyCar.style.left = Math.floor(Math.random() * 350) + "px";
         }
-
         enemyCar.y += player.speed;
         enemyCar.style.top = enemyCar.y + "px";
     });
@@ -116,6 +113,7 @@ function initializeGame() {
     player.speed = 5;
 
     window.requestAnimationFrame(runGame);
+
     for (x = 0; x < 5; x++) {
         let roadLine = document.createElement("div");
         roadLine.setAttribute("class", "lines");
@@ -123,6 +121,7 @@ function initializeGame() {
         roadLine.style.top = roadLine.y + "px";
         gameArea.appendChild(roadLine);
     }
+
     let car = document.createElement("div");
     car.setAttribute("class", "myCar");
     gameArea.appendChild(car);
